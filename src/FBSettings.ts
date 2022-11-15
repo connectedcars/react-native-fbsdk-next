@@ -56,12 +56,44 @@ export default {
     Settings.initializeSDK();
   },
   /**
-   * Set app id
+   * Set the Facebook App ID to be used by the SDK.
    */
   setAppID(appID: string) {
     if (!isDefined(appID) || !isString(appID) || appID.length === 0) {
       throw new Error("setAppID expected 'appID' to be a non empty string");
     }
     Settings.setAppID(appID);
+  },
+  /**
+   * For iOS only, set the app url scheme suffix used by the SDK.
+   * @platform ios
+   */
+   setAppURLSchemeSuffix(appURLSchemeSuffix: string) {
+    if (Platform.OS !== 'ios') {
+      return;
+    }
+
+    if (!isDefined(appURLSchemeSuffix) || !isString(appURLSchemeSuffix) || appURLSchemeSuffix.length === 0) {
+      throw new Error("setAppURLSchemeSuffix expected 'appURLSchemeSuffix' to be a non empty string");
+    }
+    Settings.setAppURLSchemeSuffix(appURLSchemeSuffix);
+  },
+  /**
+   * Sets the Client Token for the Facebook App.
+   */
+   setClientToken(clientToken: string) {
+    if (!isDefined(clientToken) || !isString(clientToken) || clientToken.length === 0) {
+      throw new Error("setClientToken expected 'clientToken' to be a non empty string");
+    }
+    Settings.setClientToken(clientToken);
+  },
+  /**
+   * Set the default Facebook Display Name to be used by the SDK.
+   */
+   setDisplayName(displayName: string) {
+    if (!isDefined(displayName) || !isString(displayName) || displayName.length === 0) {
+      throw new Error("setDisplayName expected 'displayName' to be a non empty string");
+    }
+    Settings.setDisplayName(displayName);
   },
 };

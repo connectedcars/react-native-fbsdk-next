@@ -53,4 +53,19 @@ RCT_EXPORT_METHOD(setAppID:(NSString *)appID)
   [FBSDKSettings.sharedSettings setAppID:appID];
 }
 
+RCT_EXPORT_METHOD(setAppURLSchemeSuffix:(NSString *)appURLSchemeSuffix)
+{
+  [FBSDKSettings.sharedSettings setAppURLSchemeSuffix:appURLSchemeSuffix];
+}
+
+RCT_EXPORT_METHOD(setClientToken:(NSString *)clientToken)
+{
+  [FBSDKSettings.sharedSettings setClientToken:clientToken];
+}
+
+RCT_EXPORT_METHOD(setDisplayName:(NSString *)displayName)
+{
+  [FBSDKSettings.sharedSettings setDisplayName:displayName];
+}
+
 @end

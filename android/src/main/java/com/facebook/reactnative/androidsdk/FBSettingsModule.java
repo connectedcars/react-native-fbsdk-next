@@ -56,11 +56,29 @@ public class FBSettingsModule extends BaseJavaModule {
     }
 
     /**
-     * Set app id
-     * @param appID app id
+     * Sets the Facebook application ID for the current app.
+     * @param appID Facebook application ID for the current app.
      */
     @ReactMethod
     public static void setAppID(String appID) {
         FacebookSdk.setApplicationId(appID);
     }
+
+    /**
+     * Sets the Facebook client token for the current app.
+     * @param clientToken client token for the current app
+     */
+    @ReactMethod
+    public static void setClientToken(String clientToken) {
+        FacebookSdk.setClientToken(clientToken);
+    }
+
+    /**
+     * Sets the Facebook application name for the current app.
+     * @param displayName name for the current app.
+     */
+    @ReactMethod
+    public static void setDisplayName(String displayName) {
+        FacebookSdk.setApplicationName(displayName);
+    }        
 }
